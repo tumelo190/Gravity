@@ -1,3 +1,17 @@
-# Build folder and log file
 build/
-build.log
+.vscode/
+.vs/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+.DS_Store
+cmake-build-debug/
+cmake-build-release/
+*.swp
+*.swo
+*~
+.idea/
+node_modules/
+dist/

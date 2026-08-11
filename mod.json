@@ -1,0 +1,21 @@
+{
+  "geode": "v0.7.2",
+  "version": "1.0.0",
+  "name": "Gravity",
+  "developer": "tumelo190",
+  "description": "A mod menu with 200+ toggles for Geometry Dash - Mobile (Eclipse) and PC (MegaHack) style menus",
+  "settings": {
+    "menu_enabled": {
+      "name": "Menu Enabled",
+      "description": "Toggle the mod menu on/off",
+      "type": "bool",
+      "default": true
+    },
+    "menu_style": {
+      "name": "Menu Style",
+      "description": "Choose between Mobile (Eclipse) or PC (MegaHack) style",
+      "type": "string",
+      "default": "auto"
+    }
+  }
+}
