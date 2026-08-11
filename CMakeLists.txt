@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.21)
 project(Gravity)
 
 include(FetchContent)
-FetchContent_Declare(geode URL https://github.com/geode-sdk/geode/releases/download/v0.7.2/geode-sdk.zip)
+FetchContent_Declare(geode URL https://github.com/geode-sdk/geode/releases/download/v5.9.0/geode-sdk.zip)
 FetchContent_MakeAvailable(geode)
 
 file(GLOB_RECURSE SOURCES
