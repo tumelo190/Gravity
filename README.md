@@ -1,8 +1,8 @@
 # Gravity - Geode Mod Menu
 
 A comprehensive mod menu for Geometry Dash with 200+ toggles, featuring platform-specific UIs:
-- **Mobile**: Eclipse-style menu with tabs
-- **PC**: MegaHack-style menu
+- **Mobile**: own custom style not anymore eclipse style
+- **PC**: MegaHack windows-style menu
 
 ## Features
 
@@ -16,15 +16,15 @@ A comprehensive mod menu for Geometry Dash with 200+ toggles, featuring platform
 - And many more!
 
 🎨 **Platform-Specific UIs:**
-- Mobile (Eclipse style with tabs)
-- PC (MegaHack style panel)
+- Mobile (custom style with tabs)
+- PC (MegaHack windows style panel)
 
 💾 **Persistent Settings:** All toggle states saved automatically
 
 ## Setup
 
 ### Prerequisites
-- Geode SDK v0.7.2
+- Geode SDK v5.9.0
 - CMake 3.21 or higher
 - C++20 compatible compiler
 
