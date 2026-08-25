@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Gravity",
   "developer": "tumelo190",
-  "description": "A mod menu with 200+ toggles for Geometry Dash - Mobile (Eclipse) and PC (MegaHack) style menus",
+  "description": "A mod menu with 200+ toggles for Geometry Dash - Mobile (custom) and PC (MegaHack windows) style menus",
   "settings": {
     "menu_enabled": {
       "name": "Menu Enabled",
@@ -13,7 +13,7 @@
     },
     "menu_style": {
       "name": "Menu Style",
-      "description": "Choose between Mobile (Eclipse) or PC (MegaHack) style",
+      "description": "Choose between Mobile (custom) or PC (MegaHack windows) style",
       "type": "string",
       "default": "auto"
     }
