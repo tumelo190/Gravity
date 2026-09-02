@@ -20,13 +20,16 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y build-essential git
+        sudo apt-get install -y build-essential git cmake
 
-    - name: Install Geode CLI
-      run: bash install-geode-cli.sh || echo "Geode CLI install script not found"
+    - name: Create build directory
+      run: mkdir -p build
 
-    - name: Build Gravity Mod
-      run: geode build
+    - name: Build with CMake
+      run: |
+        cd build
+        cmake ..
+        make
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
@@ -40,5 +43,5 @@ jobs:
       if: success()
 
     - name: Build failed
-      run: echo "❌ Build failed"
+      run: echo "❌ Build failed - Check logs above"
       if: failure()
