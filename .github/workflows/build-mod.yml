@@ -1,10 +1,10 @@
-name: Build Mod
+name: Build and Release Mod
 
 on:
   push:
     branches: [ main, master, develop ]
-  pull_request:
-    branches: [ main, master, develop ]
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
         sudo apt-get install -y build-essential git
 
     - name: Install Geode CLI
-      run: bash install-geode-cli.sh || echo "Geode CLI install script not found, skipping"
+      run: bash install-geode-cli.sh || echo "Geode CLI install script not found"
 
     - name: Build Gravity Mod
       run: geode build
@@ -40,5 +40,5 @@ jobs:
       if: success()
 
     - name: Build failed
-      run: echo "❌ Build failed - Check logs above"
+      run: echo "❌ Build failed"
       if: failure()
