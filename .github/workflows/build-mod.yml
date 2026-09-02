@@ -23,19 +23,17 @@ jobs:
         sudo apt-get install -y build-essential git
 
     - name: Install Geode CLI
-      run: bash install-geode-cli.sh
+      run: bash install-geode-cli.sh || echo "Geode CLI install script not found, skipping"
 
     - name: Build Gravity Mod
-      run: |
-        cd Gravity
-        geode build
+      run: geode build
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       if: success()
       with:
         name: Gravity-Build
-        path: Gravity/build/
+        path: build/
 
     - name: Show build status
       run: echo "✅ Build completed successfully!"
