@@ -1,0 +1,9 @@
+{
+  "geode": "3.0.0",
+  "version": "1.0.0",
+  "id": "gravity_mod",
+  "name": "Gravity Mod",
+  "developer": "tumelo190",
+  "description": "Ultimate Geometry Dash mod with 200+ toggles, custom profiles, and gravity dev profile system.",
+  "api": "v2.1.0"
+}
