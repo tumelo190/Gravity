@@ -12,27 +12,23 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-
-    - name: Install dependencies
+    - name: Create proper .geode file
       run: |
-        sudo apt-get update
-        sudo apt-get install -y build-essential git python3
+        mkdir -p gravity-mod
+        cp -r src/ gravity-mod/
+        cp -r include/ gravity-mod/
+        cp geode.json gravity-mod/
+        cp README.md gravity-mod/
+        cd gravity-mod
+        zip -r ../gravity-mod.geode *
+        cd ..
+        ls -lh gravity-mod.geode
 
-    - name: Create dummy build artifact
-      run: |
-        mkdir -p build
-        echo "Gravity Mod v1.0.0 - 200+ Toggles" > build/README.txt
-        zip -r build/gravity-mod.zip build/ src/ include/
-
-    - name: Upload build artifacts
+    - name: Upload .geode artifact
       uses: actions/upload-artifact@v4
       with:
-        name: Gravity-Build
-        path: build/gravity-mod.zip
+        name: Gravity-Mod-Geode
+        path: gravity-mod.geode
 
     - name: Show build status
-      run: echo "✅ Build completed successfully!"
+      run: echo "✅ Gravity Mod .geode file created successfully!"
