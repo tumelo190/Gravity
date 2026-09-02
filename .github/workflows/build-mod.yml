@@ -1,0 +1,46 @@
+name: Build Mod
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up CMake
+      uses: lukka/get-cmake@latest
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential git
+
+    - name: Install Geode CLI
+      run: bash install-geode-cli.sh
+
+    - name: Build Gravity Mod
+      run: |
+        cd Gravity
+        geode build
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      if: success()
+      with:
+        name: Gravity-Build
+        path: Gravity/build/
+
+    - name: Show build status
+      run: echo "✅ Build completed successfully!"
+      if: success()
+
+    - name: Build failed
+      run: echo "❌ Build failed - Check logs above"
+      if: failure()
