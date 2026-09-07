@@ -1,34 +1,25 @@
-name: Build and Release Mod
+name: Build Gravity Mod
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [main, master, develop]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Create proper .geode file
-      run: |
-        mkdir -p gravity-mod
-        cp -r src/ gravity-mod/
-        cp -r include/ gravity-mod/
-        cp geode.json gravity-mod/
-        cp README.md gravity-mod/
-        cd gravity-mod
-        zip -r ../gravity-mod.geode *
-        cd ..
-        ls -lh gravity-mod.geode
+      - name: Build Geode mod
+        uses: geode-sdk/build-geode-mod@main
+        id: build
+        with:
+          sdk: latest
 
-    - name: Upload .geode artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: Gravity-Mod-Geode
-        path: gravity-mod.geode
-
-    - name: Show build status
-      run: echo "✅ Gravity Mod .geode file created successfully!"
+      - name: Upload Geode mod
+        uses: actions/upload-artifact@v4
+        with:
+          name: Gravity-Mod-Geode
+          path: ${{ steps.build.outputs.geode }}
