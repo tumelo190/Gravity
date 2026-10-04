@@ -1,33 +1,75 @@
 #pragma once
+
 #include <string>
 #include <vector>
-#include <map>
+#include <array>
 
-struct Toggle {
-    std::string id;
-    std::string name;
-    std::string category;
+enum class ToggleCategory {
+    Gameplay,
+    Movement,
+    Visual,
+    Speed,
+    Practice,
+    Utility,
+    Audio,
+    HUD,
+    Bots,
+    Interface,
+    Misc
+};
+
+struct ToggleEntry {
+    const char* id;
+    const char* name;
+    ToggleCategory category;
     bool enabled;
-    std::string description;
+    const char* description;
+};
+
+struct InterfaceTheme {
+    const char* id;
+    const char* name;
+    const char* primaryColor;
+    const char* secondaryColor;
+    const char* accentColor;
+    const char* textColor;
 };
 
 class ToggleManager {
 public:
-    static ToggleManager* get();
-    
-    void addToggle(const std::string& id, const std::string& name, 
-                   const std::string& category, const std::string& description = "");
-    void setToggleState(const std::string& id, bool state);
-    bool getToggleState(const std::string& id) const;
-    
-    const std::vector<Toggle>& getAllToggles() const;
-    std::vector<Toggle> getTogglesByCategory(const std::string& category) const;
-    
-    void saveToggles();
-    void loadToggles();
-    
+    static ToggleManager& get() {
+        static ToggleManager instance;
+        return instance;
+    }
+
+    void init();
+    ToggleEntry* find(const char* id);
+    void set(const char* id, bool state);
+    bool get(const char* id) const;
+    const std::vector<ToggleEntry>& all() const;
+    std::vector<ToggleEntry> getByCategory(ToggleCategory cat) const;
+    void saveSettings();
+    void loadSettings();
+
 private:
-    ToggleManager();
-    std::vector<Toggle> m_toggles;
-    std::map<std::string, bool> m_toggleStates;
+    std::vector<ToggleEntry> m_toggles;
+};
+
+class InterfaceThemeManager {
+public:
+    static InterfaceThemeManager& get() {
+        static InterfaceThemeManager instance;
+        return instance;
+    }
+
+    void init();
+    const std::array<InterfaceTheme, 45>& getAllThemes() const { return m_themes; }
+    const InterfaceTheme& getTheme(int index) const;
+    const InterfaceTheme& getThemeById(const char* id) const;
+    void setCurrentTheme(int index);
+    int getCurrentThemeIndex() const { return m_currentTheme; }
+
+private:
+    std::array<InterfaceTheme, 45> m_themes{};
+    int m_currentTheme = 0;
 };
