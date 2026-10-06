@@ -75,3 +75,8 @@
     "visual"
   ]
 }
+"resources": {
+  "logo": "https://raw.githubusercontent.com/tumelo190/Gravity/main/assets/logo.png",
+  "banner": "https://raw.githubusercontent.com/tumelo192/Gravity/main/assets/banner.png",
+  "thumbnail": "https://raw.githubusercontent.com/tumelo190/Gravity/main/assets/thumbnail.png"
+      }
