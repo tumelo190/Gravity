@@ -4,11 +4,13 @@
   "id": "gravity",
   "name": "Gravity",
   "developer": "tumelo190",
-  "description": "Advanced mod menu for Geometry Dash with 200+ toggles (Mobile) and 160 toggles (PC) - Eclipse alternative with more features",
-  "long_description": "Gravity is a comprehensive mod menu system for Geometry Dash featuring:\n- 200+ toggles on Mobile\n- 160 toggles on PC\n- 50 mobile themes\n- 35 PC themes\n- Floating action button\n- Tab-based navigation\n- Persistent settings\n- Click bot & Macro bot\n- Practice mode system\n- Speed controls and visual effects",
+  "description": "Advanced Geometry Dash mod menu with 200+ toggles on Mobile and 160 toggles on PC - Eclipse alternative with more features",
+  "long_description": "Gravity is a comprehensive mod menu for Geometry Dash featuring:\n- 200+ toggles on Mobile\n- 160 toggles on PC\n- 50 mobile themes\n- 35 PC themes\n- Floating action button\n- Tab-based navigation\n- Persistent settings\n- Click bot & Macro bot\n- Practice mode system\n- Speed controls and visual effects",
   "homepage": "https://github.com/tumelo190/Gravity",
   "repository": "https://github.com/tumelo190/Gravity",
   "issues": "https://github.com/tumelo190/Gravity/issues",
+  "source_code": "https://github.com/tumelo190/Gravity",
+  "download_url": "https://github.com/tumelo190/Gravity/releases/download/v1.8.0/gravity.geode",
   "about": {
     "title": "Gravity Mod Menu",
     "description": "A comprehensive mod menu for Geometry Dash",
@@ -65,10 +67,6 @@
   "dependencies": [],
   "api": "v2.1.0",
   "minGeodeVersion": "2.0.0",
-  "resources": {
-    "logo": "https://raw.githubusercontent.com/tumelo190/Gravity/main/assets/logo.png",
-    "banner": "https://raw.githubusercontent.com/tumelo190/Gravity/main/assets/banner.png"
-  },
   "tags": [
     "menu",
     "utility",
