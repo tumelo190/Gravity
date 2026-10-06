@@ -1,9 +1,124 @@
 {
   "geode": "3.0.0",
-  "version": "1.0.0",
-  "id": "gravity_mod",
-  "name": "Gravity Mod",
+  "version": "1.8.0",
+  "id": "gravity-mod",
+  "name": "Gravity",
   "developer": "tumelo190",
-  "description": "Ultimate Geometry Dash mod with 200+ toggles, custom profiles, and gravity dev profile system.",
-  "api": "v2.1.0"
+  "description": "Advanced mod menu for Geometry Dash with 200+ toggles (Mobile) and 160 toggles (PC), featuring custom UI, themes, and extensive gameplay modifications.",
+  "homepage": "https://github.com/tumelo190/Gravity",
+  "repository": "https://github.com/tumelo190/Gravity",
+  "issues": "https://github.com/tumelo190/Gravity/issues",
+  "about": {
+    "title": "Gravity Mod Menu",
+    "description": "A comprehensive mod menu system for Geometry Dash with platform-specific interfaces",
+    "credits": [
+      {
+        "name": "tumelo190",
+        "role": "Developer"
+      }
+    ]
+  },
+  "settings": {
+    "menu_enabled": {
+      "name": "Menu Enabled",
+      "description": "Enable/disable the Gravity mod menu",
+      "type": "bool",
+      "default": true
+    },
+    "menu_style": {
+      "name": "Menu Style",
+      "description": "Auto-detect platform or choose manually",
+      "type": "string",
+      "default": "auto",
+      "options": ["auto", "mobile", "pc"]
+    },
+    "theme": {
+      "name": "Theme",
+      "description": "Select your preferred theme color scheme",
+      "type": "string",
+      "default": "dark_blue"
+    },
+    "auto_save": {
+      "name": "Auto Save Settings",
+      "description": "Automatically save toggle states",
+      "type": "bool",
+      "default": true
+    }
+  },
+  "toggles": {
+    "gameplay": {
+      "name": "Gameplay",
+      "count": 35,
+      "description": "Core game mechanics and modifiers"
+    },
+    "movement": {
+      "name": "Movement",
+      "count": 25,
+      "description": "Player movement and gravity controls"
+    },
+    "visual": {
+      "name": "Visual",
+      "count": 35,
+      "description": "Graphics, appearance, and visibility"
+    },
+    "speed": {
+      "name": "Speed",
+      "count": 20,
+      "description": "Game speed multipliers and controls"
+    },
+    "practice": {
+      "name": "Practice",
+      "count": 15,
+      "description": "Practice mode and checkpoint features"
+    },
+    "utility": {
+      "name": "Utility",
+      "count": 20,
+      "description": "Helper tools and utilities"
+    },
+    "audio": {
+      "name": "Audio",
+      "count": 10,
+      "description": "Sound and music controls"
+    },
+    "bots": {
+      "name": "Bots",
+      "count": 15,
+      "description": "Automation and bot features"
+    },
+    "interface": {
+      "name": "Interface",
+      "count": 20,
+      "description": "UI customization and controls"
+    },
+    "misc": {
+      "name": "Misc",
+      "count": 20,
+      "description": "Graphics effects and settings"
+    }
+  },
+  "themes": {
+    "mobile": 45,
+    "pc": 10,
+    "total": 55
+  },
+  "features": [
+    "200+ toggles on Mobile",
+    "160 toggles on PC",
+    "45 mobile themes",
+    "10 PC themes",
+    "Persistent settings",
+    "Floating action button",
+    "Tab-based navigation",
+    "Click bot & Macro bot",
+    "Practice mode system",
+    "Dark/Light themes"
+  ],
+  "dependencies": [],
+  "api": "v2.1.0",
+  "minGeodeVersion": "2.0.0",
+  "resources": {
+    "logo": "https://raw.githubusercontent.com/tumelo190/Gravity/main/assets/logo.png",
+    "banner": "https://raw.githubusercontent.com/tumelo190/Gravity/main/assets/banner.png"
+  }
 }
