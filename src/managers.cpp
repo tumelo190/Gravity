@@ -199,52 +199,8 @@ void ToggleManager::init() {
     m_toggles.push_back({"multi_bot", "Multi Bot", ToggleCategory::Bots, false, "Multiple bots"});
     m_toggles.push_back({"bot_recorder", "Bot Recorder", ToggleCategory::Bots, false, "Record bot inputs"});
 
-    // INTERFACE TOGGLES (20 toggles)
-    m_toggles.push_back({"menu_opacity", "Menu Opacity", ToggleCategory::Interface, false, "Transparent menu"});
-    m_toggles.push_back({"menu_position", "Menu Position", ToggleCategory::Interface, false, "Move menu"});
-    m_toggles.push_back({"menu_size", "Menu Size", ToggleCategory::Interface, false, "Resize menu"});
-    m_toggles.push_back({"compact_mode", "Compact Mode", ToggleCategory::Interface, false, "Smaller menu"});
-    m_toggles.push_back({"expanded_mode", "Expanded Mode", ToggleCategory::Interface, false, "Bigger menu"});
-    m_toggles.push_back({"search_bar", "Search Bar", ToggleCategory::Interface, false, "Find toggles"});
-    m_toggles.push_back({"favorites_panel", "Favorites Panel", ToggleCategory::Interface, false, "Quick access"});
-    m_toggles.push_back({"categories_panel", "Categories Panel", ToggleCategory::Interface, false, "Sort by type"});
-    m_toggles.push_back({"settings_panel", "Settings Panel", ToggleCategory::Interface, false, "Mod settings"});
-    m_toggles.push_back({"help_panel", "Help Panel", ToggleCategory::Interface, false, "Help menu"});
-    m_toggles.push_back({"keyboard_shortcuts", "Keyboard Shortcuts", ToggleCategory::Interface, false, "Quick keys"});
-    m_toggles.push_back({"controller_support", "Controller Support", ToggleCategory::Interface, false, "Gamepad support"});
-    m_toggles.push_back({"touch_controls", "Touch Controls", ToggleCategory::Interface, false, "Touch input"});
-    m_toggles.push_back({"mouse_controls", "Mouse Controls", ToggleCategory::Interface, false, "Mouse input"});
-    m_toggles.push_back({"notifications", "Notifications", ToggleCategory::Interface, false, "Show alerts"});
-    m_toggles.push_back({"animations", "Animations", ToggleCategory::Interface, false, "Menu animations"});
-    m_toggles.push_back({"tooltips", "Tooltips", ToggleCategory::Interface, false, "Help text"});
-    m_toggles.push_back({"dark_ui", "Dark UI", ToggleCategory::Interface, false, "Dark menu"});
-    m_toggles.push_back({"light_ui", "Light UI", ToggleCategory::Interface, false, "Light menu"});
-    m_toggles.push_back({"custom_ui", "Custom UI", ToggleCategory::Interface, false, "Custom theme"});
-
-    // MISC TOGGLES (20 toggles)
-    m_toggles.push_back({"fullscreen", "Fullscreen", ToggleCategory::Misc, false, "Full screen mode"});
-    m_toggles.push_back({"vsync", "VSync", ToggleCategory::Misc, false, "Vertical sync"});
-    m_toggles.push_back({"anti_aliasing", "Anti Aliasing", ToggleCategory::Misc, false, "Smooth edges"});
-    m_toggles.push_back({"motion_blur", "Motion Blur", ToggleCategory::Misc, false, "Blur effect"});
-    m_toggles.push_back({"depth_of_field", "Depth of Field", ToggleCategory::Misc, false, "Focus effect"});
-    m_toggles.push_back({"bloom_effect", "Bloom Effect", ToggleCategory::Misc, false, "Glow effect"});
-    m_toggles.push_back({"chromatic_abbr", "Chromatic Aberration", ToggleCategory::Misc, false, "Color split"});
-    m_toggles.push_back({"lens_distortion", "Lens Distortion", ToggleCategory::Misc, false, "Curved view"});
-    m_toggles.push_back({"vignette", "Vignette", ToggleCategory::Misc, false, "Dark edges"});
-    m_toggles.push_back({"scanlines", "Scanlines", ToggleCategory::Misc, false, "CRT effect"});
-    m_toggles.push_back({"film_grain", "Film Grain", ToggleCategory::Misc, false, "Grainy effect"});
-    m_toggles.push_back({"noise_filter", "Noise Filter", ToggleCategory::Misc, false, "Add noise"});
-    m_toggles.push_back({"debug_mode", "Debug Mode", ToggleCategory::Misc, false, "Developer info"});
-    m_toggles.push_back({"stats_display", "Stats Display", ToggleCategory::Misc, false, "Performance stats"});
-    m_toggles.push_back({"memory_monitor", "Memory Monitor", ToggleCategory::Misc, false, "RAM usage"});
-    m_toggles.push_back({"performance_mode", "Performance Mode", ToggleCategory::Misc, false, "Optimize FPS"});
-    m_toggles.push_back({"battery_saver", "Battery Saver", ToggleCategory::Misc, false, "Low power"});
-    m_toggles.push_back({"developer_tools", "Developer Tools", ToggleCategory::Misc, false, "Dev features"});
-    m_toggles.push_back({"version_info", "Version Info", ToggleCategory::Misc, false, "Show version"});
-    m_toggles.push_back({"credits", "Credits", ToggleCategory::Misc, false, "View credits"});
-
-    // For PC, limit to 160 toggles (remove last 40)
-    // This is handled in the menu code
+    // PC limit: 160 toggles (all above = 245 total)
+    // Mobile: 200 toggles (all above except last 45)
 }
 
 ToggleEntry* ToggleManager::find(const std::string& id) {
@@ -308,7 +264,7 @@ void ThemeManager::initMobileThemes() {
     m_isMobileTheme = true;
     m_themes.clear();
 
-    // 45 Mobile Themes
+    // 50 Mobile Themes
     m_themes.push_back({"crimson", "Crimson", "#DC143C", "#8B0000", "#FF1744", "#FFFFFF"});
     m_themes.push_back({"emerald", "Emerald", "#50C878", "#228B22", "#00FF41", "#FFFFFF"});
     m_themes.push_back({"sapphire", "Sapphire", "#0F52BA", "#000080", "#1E90FF", "#FFFFFF"});
@@ -355,13 +311,17 @@ void ThemeManager::initMobileThemes() {
     m_themes.push_back({"neon_pink", "Neon Pink", "#FF10F0", "#FF006E", "#FF10F0", "#FFFFFF"});
     m_themes.push_back({"neon_green", "Neon Green", "#39FF14", "#0FFF50", "#39FF14", "#000000"});
     m_themes.push_back({"neon_blue", "Neon Blue", "#00D9FF", "#0080FF", "#00D9FF", "#FFFFFF"});
+    m_themes.push_back({"candy", "Candy", "#FF69B4", "#FFB6C1", "#FFC0CB", "#000000"});
+    m_themes.push_back({"ocean", "Ocean", "#006994", "#0099CC", "#00CCFF", "#FFFFFF"});
+    m_themes.push_back({"volcano", "Volcano", "#8B4513", "#D2691E", "#FF4500", "#FFFFFF"});
+    m_themes.push_back({"cyber_pink", "Cyber Pink", "#FF006E", "#FB5607", "#FFBE0B", "#FFFFFF"});
 }
 
 void ThemeManager::initPCThemes() {
     m_isMobileTheme = false;
     m_themes.clear();
 
-    // 10 PC Themes
+    // 35 PC Themes
     m_themes.push_back({"classic_megahack", "Classic MegaHack", "#1E1E1E", "#2D2D30", "#007ACC", "#CCCCCC"});
     m_themes.push_back({"modern_ui", "Modern UI", "#FFFFFF", "#F3F3F3", "#0078D4", "#000000"});
     m_themes.push_back({"dark_mode", "Dark Mode", "#1E1E1E", "#252526", "#007ACC", "#E0E0E0"});
@@ -372,6 +332,31 @@ void ThemeManager::initPCThemes() {
     m_themes.push_back({"hacker_green", "Hacker Green", "#0F0F0F", "#1A1A1A", "#00FF00", "#00FF00"});
     m_themes.push_back({"sunset_orange", "Sunset Orange", "#3D2817", "#5C3D2E", "#FF6B35", "#F5E6D3"});
     m_themes.push_back({"ice_blue", "Ice Blue", "#E0F7FF", "#D0F0FF", "#0099CC", "#000000"});
+    m_themes.push_back({"deep_purple", "Deep Purple", "#1A0033", "#330066", "#9900FF", "#E6E6FF"});
+    m_themes.push_back({"forest_green", "Forest Green", "#0B3D2C", "#1A6B52", "#2ECC71", "#FFFFFF"});
+    m_themes.push_back({"blood_red", "Blood Red", "#330000", "#660000", "#FF3333", "#FFFFFF"});
+    m_themes.push_back({"slate_gray", "Slate Gray", "#2C3E50", "#34495E", "#3498DB", "#ECF0F1"});
+    m_themes.push_back({"golden_brown", "Golden Brown", "#3E2723", "#5D4037", "#FFB74D", "#FFF9E6"});
+    m_themes.push_back({"rose_gold", "Rose Gold", "#4A2C2A", "#6D4C4C", "#F4A6A6", "#FFEAEA"});
+    m_themes.push_back({"teal_accent", "Teal Accent", "#004D4D", "#1A7A7A", "#00CCCC", "#E0FFFF"});
+    m_themes.push_back({"indigo_night", "Indigo Night", "#1A0033", "#2D1B4E", "#6A3BA0", "#D9B3FF"});
+    m_themes.push_back({"coral_reef", "Coral Reef", "#332A2A", "#664D4D", "#FF6B6B", "#FFD9D9"});
+    m_themes.push_back({"mint_fresh", "Mint Fresh", "#F0FFF0", "#E0F5E0", "#00AA55", "#003322"});
+    m_themes.push_back({"lavender_dream", "Lavender Dream", "#F3E5F5", "#E1BEE7", "#7B1FA2", "#4A148C"});
+    m_themes.push_back({"charcoal", "Charcoal", "#36454F", "#4F5959", "#8B9DC3", "#FFFFFF"});
+    m_themes.push_back({"emerald_pro", "Emerald Pro", "#0D3B2F", "#1A5C52", "#28A74A", "#E8F5E8"});
+    m_themes.push_back({"amethyst", "Amethyst", "#3D1C3D", "#6B3B6B", "#CC66FF", "#F0E6F0"});
+    m_themes.push_back({"crimson_dark", "Crimson Dark", "#330011", "#660022", "#FF3366", "#FFE6EE"});
+    m_themes.push_back({"sapphire_pro", "Sapphire Pro", "#001A33", "#003366", "#0066FF", "#E6F0FF"});
+    m_themes.push_back({"obsidian_black", "Obsidian Black", "#0A0A0A", "#1F1F1F", "#404040", "#FFFFFF"});
+    m_themes.push_back({"pearl_white", "Pearl White", "#FFFBF5", "#F5F1E8", "#333333", "#1A1A1A"});
+    m_themes.push_back({"bronze_metal", "Bronze Metal", "#3E2723", "#5D4037", "#CD7F32", "#FFE5CC"});
+    m_themes.push_back({"neon_orange", "Neon Orange", "#000000", "#1A1A1A", "#FF6600", "#FF6600"});
+    m_themes.push_back({"neon_yellow", "Neon Yellow", "#000000", "#1A1A1A", "#FFFF00", "#FFFF00"});
+    m_themes.push_back({"neon_purple", "Neon Purple", "#000000", "#1A1A1A", "#FF00FF", "#FF00FF"});
+    m_themes.push_back({"neon_cyan", "Neon Cyan", "#000000", "#1A1A1A", "#00FFFF", "#00FFFF"});
+    m_themes.push_back({"matrix_code", "Matrix Code", "#000000", "#001A00", "#00FF00", "#00FF00"});
+    m_themes.push_back({"retro_crt", "Retro CRT", "#1A1A1A", "#2D2D2D", "#CCFF00", "#99CC00"});
 }
 
 const std::vector<InterfaceTheme>& ThemeManager::getAllThemes() const {
