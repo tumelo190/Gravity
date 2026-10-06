@@ -1,20 +1,21 @@
 {
   "geode": "3.0.0",
   "version": "1.8.0",
-  "id": "gravity-mod",
+  "id": "gravity",
   "name": "Gravity",
   "developer": "tumelo190",
-  "description": "Advanced mod menu for Geometry Dash with 200+ toggles (Mobile) and 160 toggles (PC), featuring custom UI, themes, and extensive gameplay modifications.",
+  "description": "Advanced mod menu for Geometry Dash with 200+ toggles (Mobile) and 160 toggles (PC) - Eclipse alternative with more features",
+  "long_description": "Gravity is a comprehensive mod menu system for Geometry Dash featuring:\n- 200+ toggles on Mobile\n- 160 toggles on PC\n- 50 mobile themes\n- 35 PC themes\n- Floating action button\n- Tab-based navigation\n- Persistent settings\n- Click bot & Macro bot\n- Practice mode system\n- Speed controls and visual effects",
   "homepage": "https://github.com/tumelo190/Gravity",
   "repository": "https://github.com/tumelo190/Gravity",
   "issues": "https://github.com/tumelo190/Gravity/issues",
   "about": {
     "title": "Gravity Mod Menu",
-    "description": "A comprehensive mod menu system for Geometry Dash with platform-specific interfaces",
+    "description": "A comprehensive mod menu for Geometry Dash",
     "credits": [
       {
         "name": "tumelo190",
-        "role": "Developer"
+        "role": "Developer & Creator"
       }
     ]
   },
@@ -45,74 +46,21 @@
       "default": true
     }
   },
-  "toggles": {
-    "gameplay": {
-      "name": "Gameplay",
-      "count": 35,
-      "description": "Core game mechanics and modifiers"
-    },
-    "movement": {
-      "name": "Movement",
-      "count": 25,
-      "description": "Player movement and gravity controls"
-    },
-    "visual": {
-      "name": "Visual",
-      "count": 35,
-      "description": "Graphics, appearance, and visibility"
-    },
-    "speed": {
-      "name": "Speed",
-      "count": 20,
-      "description": "Game speed multipliers and controls"
-    },
-    "practice": {
-      "name": "Practice",
-      "count": 15,
-      "description": "Practice mode and checkpoint features"
-    },
-    "utility": {
-      "name": "Utility",
-      "count": 20,
-      "description": "Helper tools and utilities"
-    },
-    "audio": {
-      "name": "Audio",
-      "count": 10,
-      "description": "Sound and music controls"
-    },
-    "bots": {
-      "name": "Bots",
-      "count": 15,
-      "description": "Automation and bot features"
-    },
-    "interface": {
-      "name": "Interface",
-      "count": 20,
-      "description": "UI customization and controls"
-    },
-    "misc": {
-      "name": "Misc",
-      "count": 20,
-      "description": "Graphics effects and settings"
-    }
-  },
-  "themes": {
-    "mobile": 45,
-    "pc": 10,
-    "total": 55
-  },
   "features": [
     "200+ toggles on Mobile",
     "160 toggles on PC",
-    "45 mobile themes",
-    "10 PC themes",
+    "50 mobile themes",
+    "35 PC themes",
     "Persistent settings",
     "Floating action button",
     "Tab-based navigation",
     "Click bot & Macro bot",
     "Practice mode system",
-    "Dark/Light themes"
+    "Dark/Light themes",
+    "Speed controls",
+    "Visual effects",
+    "Audio controls",
+    "Movement modifiers"
   ],
   "dependencies": [],
   "api": "v2.1.0",
@@ -120,5 +68,12 @@
   "resources": {
     "logo": "https://raw.githubusercontent.com/tumelo190/Gravity/main/assets/logo.png",
     "banner": "https://raw.githubusercontent.com/tumelo190/Gravity/main/assets/banner.png"
-  }
+  },
+  "tags": [
+    "menu",
+    "utility",
+    "enhancement",
+    "gameplay",
+    "visual"
+  ]
 }
